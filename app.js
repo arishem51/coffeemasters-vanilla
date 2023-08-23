@@ -1,5 +1,4 @@
-import { loadData } from "./services/Menu.js";
-import { API, Store } from "./services/index.js";
+import { Store, Router, Menu } from "./services/index.js";
 
 const eventOptions = {
   once: false,
@@ -10,12 +9,12 @@ const eventOptions = {
 
 window._app = {};
 _app.store = Store;
+_app.router = Router;
+_app.menu = Menu;
 
 window.addEventListener("DOMContentLoaded", main, eventOptions);
 
 async function main() {
-  createWindowAppStore();
-  loadData();
+  _app.menu.loadData();
+  _app.router.init();
 }
-
-function createWindowAppStore() {}
