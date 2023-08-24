@@ -1,4 +1,5 @@
 import { Store, Router, Menu } from "./services/index.js";
+import { MenuPage, OrderPage, DetailsPage } from "./components/index.js";
 
 const eventOptions = {
   once: false,
